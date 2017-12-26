@@ -1,0 +1,15 @@
+package com.spring.examples;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.scheduling.annotation.EnableScheduling;
+
+@EnableScheduling
+@SpringBootApplication
+public class TwitterAPIApplication {
+
+	public static void main(String[] args) {
+
+		SpringApplication.run(TwitterAPIApplication.class, args);
+	}
+}
