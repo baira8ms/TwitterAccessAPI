@@ -22,10 +22,10 @@ import twitter4j.auth.AccessToken;
 public class TwitterAPIService {
 	Logger logger = Logger.getLogger(TwitterAPIService.class);
 
-	String consumerKeyStr = "X3vkOigUI7N1gnfnGXsUVNpMb";
-	String consumerSecretStr = "GrQ2BXofLtv5iKSjGEc3YqmXnDSqApS26iXpXnw6WWmn0BWSKz";
-	String accessTokenStr = "945112887537946629-DfMMEAZyzjLogBnR8JwTbr6RMJUfgMc";
-	String accessTokenSecretStr = "RW94iwJe6QYuXmLBboP2AZcL6HirIbGDo5gPvbTq7U74O";
+	String consumerKeyStr = "xxx";
+	String consumerSecretStr = "xxx";
+	String accessTokenStr = "xxxx";
+	String accessTokenSecretStr = "xxxxO";
 
 	@Value("${twitterUserId}")
 	public String twitterUserId;
@@ -52,14 +52,7 @@ public class TwitterAPIService {
 		} catch (TwitterException e) {
 			logger.warn("there is an issue in retreving twitter results:"+e.getMessage());
 		}
-
-//		for (Status status : statusList) {
-//			System.out.println(status.toString());
-//		}
 		return statusList;
 	}
 
-//	public static void main(String a[]) {
-//		new TwitterAPIService().getMcCaffeTweets();
-//	}
 }

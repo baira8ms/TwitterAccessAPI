@@ -42,15 +42,16 @@ public class TwitterAPIController {
 	@Value("${emailSubject}")
 	public String emailSubject;
 
+	public TwitterAPIController(){
+		listOfExistingId = new ArrayList<Long>();
+	}
+
 	@Scheduled(fixedDelay = 65000)
 	@GetMapping(value = "/tweets")
 	public void getAllTweets() throws Exception {
 		List<Status> list = twitterAPIService.getMcCaffeTweets();
 		logger.info("Status List:" + list.size());
 
-		if (listOfExistingId == null) {
-			listOfExistingId = new ArrayList<Long>();
-		}
 		if (currentDay != new Date().getDate()) {
 			listOfExistingId = new ArrayList<Long>();
 			currentDay = new Date().getDate();

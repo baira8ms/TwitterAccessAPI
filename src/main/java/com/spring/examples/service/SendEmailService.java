@@ -20,11 +20,6 @@ public class SendEmailService {
 			message.setText(text);
 			emailSender.send(message);
 		}catch(Exception e){
-			System.out.println("retrying :"+ e.getMessage());
-			if(e.getMessage().contains("Too many login attempts")){
-				Thread.sleep(60000);
-				sendSimpleMessage(to, subject, text);
-			}
 		}
 	}
 }
